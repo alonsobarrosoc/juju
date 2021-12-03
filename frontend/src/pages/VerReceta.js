@@ -15,7 +15,8 @@ const VerReceta = (props) => {
     const [receta, setReceta] = useState({});
     const [error, setError] = useState(false);
 
-    // const recetaDisp = '';
+    const [pasos, setPasos] = useState([]);
+    const [ingredientes, setIngredientes] = useState([]);
 
 
     const loadUnaReceta = recetaId => {
@@ -23,7 +24,9 @@ const VerReceta = (props) => {
             if (data.error) {
                 setError(data.error);
             } else {
-                // console.log(data);
+
+                setPasos((data.pasos).split('\\'))
+                setIngredientes((data.ingredientes).split("\\"))
                 setReceta(data);
             }
         })
@@ -36,6 +39,8 @@ const VerReceta = (props) => {
 
         loadUnaReceta(recetaId);
 
+
+        console.log(receta)
 
     }, [props])
 
@@ -73,21 +78,19 @@ const VerReceta = (props) => {
                     </Link>
                     <h1 className='lg:text-5xl md:text-4xl sm:text-3xl text-3xl uppercase font-bold text-bold m-4 text-start' >Ingredientes</h1>
                     <div className="bg-black m-6 rounded-lg text-white text-2xl p-4 text-left">
-                        {receta.ingredientes}
-                        {/* {receta.ingredientes.split('#').map((step, i) => (
+                        {ingredientes.map((step, i) => (
                             <div key={i}>
-                                <h2>{step}{"\n"}</h2>
+                                <h2>{step}</h2>
                             </div>
-                        ))} */}
+                        ))}
                     </div>
                     <h1 className='lg:text-5xl md:text-4xl sm:text-3xl text-3xl uppercase font-bold text-black m-4 text-start' >receta</h1>
                     <div className="bg-black m-6 rounded-lg text-white text-2xl p-4 text-left">
-                        {receta.pasos}
-                        {/* {receta.pasos.split('#').map((step, i) => (
-                            <div key={i}>
-                                <h2>{step}{"\n"}</h2>
+                        {pasos.map((step, i) => (
+                            <div key = {i}>
+                                <h2>{step}</h2>
                             </div>
-                        ))} */}
+                        ))}
                     </div>
                 </div>
             </div>

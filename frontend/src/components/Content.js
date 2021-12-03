@@ -47,11 +47,8 @@ function Content() {
                             <RecetaCard receta={receta} />
                         </div>
                     ))}
-
                 </div>
             </div>
-
-
         </>
     )
 }

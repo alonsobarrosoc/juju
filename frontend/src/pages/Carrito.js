@@ -45,7 +45,7 @@ function Carrito(props) {
         <div>
             <Navigation />
             <h1 className="m-4 lg:text-9xl md:text-8xl sm:text-7xl text-5xl font-black mb-14 text-black uppercase">Ordenar Ahora</h1>
-            <div className="grid xl:grid-flow-col flex container w-screen">
+            <div className="grid xl:grid-flow-col flex container w-screen mb-24">
                 <div className=''>
                     {productos.map((producto, i) => (
                         <div key={i} className='my-4'>
@@ -57,6 +57,11 @@ function Carrito(props) {
                         <div className='bg-gradient-to-r from-green-400 to-blue-500 container flex rounded-2xl items-center'>
                             <h1 className="m-4 lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-black mb-14 text-white uppercase">Ordenar Ahora</h1>
                             <h1 className="m-4 lg:text-3xl md:text-2xl sm:text-1xl text-1xl font-black mb-14 text-black uppercase">Total: ${count}</h1>
+
+                            <Link className="m-4 lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-black mb-14 text-white uppercase bg-black rounded-lg p-2"
+                                to = '/pagar'>
+                              Pagar!
+                            </Link>
                         </div>
                     )}
                     {count == 0 && (
@@ -81,8 +86,6 @@ function Carrito(props) {
                             </Link>
                         </div>
                     )}
-                </div>
-                <div>
                 </div>
 
             </div>

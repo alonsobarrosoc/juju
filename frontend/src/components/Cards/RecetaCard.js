@@ -2,6 +2,7 @@ import React from 'react'
 import { API } from '../../config'
 import { isAuthenticated } from '../../core/apiCore'
 import { Link } from 'react-router-dom';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RecetaCard({ receta }) {

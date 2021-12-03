@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { listaReceta, nuevaReceta, photo, recetaById, read, listaRecetaFav, addFavoritos, removeFavoritos } = require('../controller/recetaController');
+
 const { userById } = require('../controller/authController');
 
 router.get('/listareceta', listaReceta);
