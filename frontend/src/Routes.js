@@ -15,6 +15,7 @@ import VerProducto from './pages/VerProducto';
 import Carrito from './pages/Carrito';
 import RecetasAdmin from './pages/RecetasAdmin';
 import ProductosAdmin from './pages/ProductosAdmin';
+import Pagar from './pages/Pagar'
 
 const Routes = () => {
     return (
@@ -36,6 +37,7 @@ const Routes = () => {
                     <Route path='/carrito/:userId' exact component={Carrito} />
                     <Route path='/verrecetaadmin' exact component={RecetasAdmin} />
                     <Route path='/verproductoadmin' exact component={ProductosAdmin} />
+                    <Route path = '/pagar' exact component={Pagar}/>
                 </Switch>
             </BrowserRouter>
         </>
