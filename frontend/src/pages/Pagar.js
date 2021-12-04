@@ -1,12 +1,13 @@
 import React,{useEffect, useState} from 'react'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
-
+import PayPal from '../components/PayPal'
 
 
 
 const Pagar = (props) => {
 
+  const [checkout, setCheckout] = useState(false)
 
   return (
     <div>
@@ -18,7 +19,13 @@ const Pagar = (props) => {
       </div>
 
 
+      {checkout ? (
 
+        <PayPal/>
+      ) : (
+
+        <button onClick = {() => setCheckout(true)}>Check Out</button>
+      )}
 
 
 
